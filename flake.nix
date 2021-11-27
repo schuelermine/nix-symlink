@@ -1,5 +1,1 @@
-{
-    outputs = { ... }: {
-        symlink = import ./symlink.nix;
-    };
-}
+{ outputs = { ... }: { symlink = import ./symlink.nix; }; }
