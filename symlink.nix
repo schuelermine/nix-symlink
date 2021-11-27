@@ -1,4 +1,6 @@
-{ busybox, system }: { link, target }: derivation {
+{ busybox ? (import <nixpkgs> {}).busybox,
+  system ? builtins.currentSystem,
+  link, target }: derivation {
     system = system;
     name = "symlink-${builtins.baseNameOf link}-${builtins.baseNameOf target}";
     builder = "${busybox}/bin/sh";
