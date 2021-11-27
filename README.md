@@ -7,9 +7,11 @@ If you import this in a flake, you will need to provide arguments for `busybox` 
 
 ## Example
 
+The flake
+
 ```nix
 {
-  inputs.symlink.url = "github:schuelermine/nix-symlink";
+  inputs.symlink.url = "github:schuelermine/nix-symlink?rev=9130ad485f410f8ec160378e8153ee7e5856e710";
   outputs = { self, symlink, nixpkgs }: {
     defaultPackage.x86_64-linux = symlink.symlink {
       system = "x86_64-linux";
@@ -21,4 +23,4 @@ If you import this in a flake, you will need to provide arguments for `busybox` 
 }
 ```
 
-will produce a symlink from `/nix/store/$something/link` to `/target`, where `$something` is determined by Nix.
+will produce a symlink from `/nix/store/p402xp95ynm3z210874h64xg37qifc52-symlink-link-target/link` to `/target`.
