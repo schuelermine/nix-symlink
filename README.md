@@ -3,7 +3,7 @@
 This is a utility for creating a derivation containing a single symlink.
 
 You can import this as a flake or via default.nix.
-If you import it in a flake, you will need to provide the arguments `system`, a reference to BusyBox or GNU Coreutils as `utils`, and the path to a shell https://duckduckgo.com/?t=ffab&q=dependentlike bash or sh as `shell`.
+If you import it in a flake, you will need to provide the arguments `system`, a reference to BusyBox or GNU Coreutils as `utils`, and the path to a shell like bash or sh as `shell`.
 If your utils derivation provides a shell under `…/bin/sh`, you can omit `shell`.
 If you use this in impure mode (e.g. outside a flake), you can omit `utils` and `system`. `utils` is automatically substituted by BusyBox from nixpkgs, and `system` uses `builtins.currentSystem`.
 If you specify GNU Coreutils in `utils`, you will need to provide a separate shell, as `sh` isn’t in coreutils.
