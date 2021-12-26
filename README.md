@@ -2,6 +2,11 @@
 
 This is a utility for creating a derivation containing a single symlink.
 
+When you import this, you will get a single function that takes an attribute set of arguments.
+If imported as a flake, the function is the output `symlink`.
+
+The symlink’s name is based on the argument `link`. Its target is determined by the argument `target`.
+
 You can import this as a flake or via default.nix.
 If you import it in a flake, you will need to provide the arguments `system`, a reference to BusyBox or GNU Coreutils as `utils`, and the path to a shell like bash or sh as `shell`.
 If your utils derivation provides a shell under `…/bin/sh`, you can omit `shell`.
