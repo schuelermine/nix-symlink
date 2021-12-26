@@ -1,6 +1,6 @@
 { system ? builtins.currentSystem, utils ? (import <nixpkgs> { }).busybox
-, shell ? "${(import <nixpkgs> { }).busybox}/bin/sh", link, target
-, link-label ? link, target-label ? target }:
+, shell ? "${utils}/bin/sh", link, target, link-label ? link
+, target-label ? target }:
 derivation {
   system = system;
   name = "symlink-${builtins.baseNameOf link-label}-${
